@@ -12,8 +12,9 @@ function Navbar() {
       };
     return (
         <div className='fixed w-full h-20 shadow-xl z-[100]'>
-            <div className='flex justify-between items-center w-full h-full  px-4  2xl:px-16'>
-                <Image src="/../public/assets/1.jpg" alt='/' width="59" height="59" className='rounded-full'  />
+            <div className='flex justify-between items-center w-full h-full  px-6  2xl:px-16'>
+                {/* <Image src="/../public/assets/1.jpg" alt='/' width="59" height="59" className='rounded-full'  /> */}
+                <h2 className='font-[Courgette] text-[#5651e5]'>AM</h2>
                 <div>
                     <ul className='hidden md:flex'>
                         <Link href="/">
@@ -52,8 +53,10 @@ function Navbar() {
                                     : 'fixed top-0 left-[-100%] p-10 ease-in duration-500'} >
                     <div className=''>
                         <div className='flex w-full items-center justify-between'>
-                            <Image src='/../public/assets/1.jpg' alt='/' width='55' height='55' className='rounded-full'/>
+                            {/* <Image src='/../public/assets/1.jpg' alt='/' width='55' height='55' className='rounded-full'/> */}
+                            <h2 className='font-[Courgette] text-[#5651e5]'>AM</h2>
                            <div onClick={handleNav} className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer  hover:scale-105 ease-in duration-300'>
+                            
                            <AiOutlineClose />
                            </div>
                         </div>

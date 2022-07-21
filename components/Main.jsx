@@ -7,7 +7,7 @@ const Main = () => {
                 <div>
                     <p className='uppercase text-sm tracking-widest text-gray-700'>let's build something together</p>
                     <h1 className='py-2 text-gray-700'>
-                        Hi,I'm <span className='text-[#5651e5]'>Amine Menhane</span>
+                        Hi,I'm <span className='text-[#5651e5] font-["Courgette"]'>Amine Menhane</span>
 
                     </h1>
                     <h1 className='py-2 text-gray-700'>
