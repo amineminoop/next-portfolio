@@ -13,7 +13,7 @@ const Main = () => {
                     <h1 className='py-2 text-gray-700'>
                         A Full Stack Developer
                     </h1>
-                    <p className='text-sm tracking-widest py-4 text-gray-600 max-w-[70%] m-auto'>
+                    <p className='text-lg tracking-widest py-4 text-gray-600 max-w-[70%] m-auto'>
                         I'm a full stack developer from Algeria, I'm specializing in building (Web, desktop and mobile ) exceptional digital experiences.
                     </p>
                 </div>
