@@ -1,11 +1,11 @@
 import React from 'react'
-import { AiOutlineMenu, AiOutlineClose, AiOutlineMail } from 'react-icons/ai'
+import {  AiOutlineMail } from 'react-icons/ai'
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
 
 const Main = () => {
     return (
-        <div className='w-full h-screen text-center'>
+        <div className='w-full h-screen text-center  '>
             <div className='max-w-[1000px] w-full h-full mx-auto p-2 flex justify-center items-center '>
                 <div>
                     <p className='uppercase text-sm tracking-widest text-gray-700'>let's build something together</p>
@@ -20,16 +20,16 @@ const Main = () => {
                         I'm a full stack developer from Algeria, I'm specializing in building (Web, desktop and mobile ) exceptional digital experiences.
                     </p>
                     <div className='flex items-center justify-between max-w-[330px] m-auto py-4'>
-                        <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300'>
+                        <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-300'>
                             <FaLinkedin />
                         </div>
-                        <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300'>
+                        <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-300'>
                             <FaGithub />
                         </div>
-                        <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300'>
+                        <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-300'>
                             <AiOutlineMail />
                         </div>
-                        <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300'>
+                        <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-300'>
                             <BsFillPersonLinesFill />
                         </div>
                     </div>
