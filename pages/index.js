@@ -4,6 +4,7 @@ import About from '../components/About'
 import Navbar from '../components/Navbar'
 import Skils from '@components/Skils'
 import Projects from '@components/Projects'
+import Contact from '@components/Contact'
 
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
           <About />
           <Skils/>
           <Projects/>
+          <Contact/>
 
         </div>
         )
