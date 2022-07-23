@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Main from '../components/Main'
 import About from '../components/About'
 import Navbar from '../components/Navbar'
+import Skils from '@components/Skils'
 
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
           <Navbar />
           <Main />
           <About />
+          <Skils/>
 
         </div>
         )
