@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Image from 'next/image'
 import Link from 'next/link'
 import { AiOutlineMenu,AiOutlineClose,AiOutlineMail } from 'react-icons/ai'
 import {FaLinkedin,FaGithub} from 'react-icons/fa'
@@ -11,7 +10,7 @@ function Navbar() {
         setNav(!nav);
       };
     return (
-        <div className='fixed w-full h-20 shadow-xl z-[100]'>
+        <div className='w-full h-20 shadow-xl z-[100]'>
             <div className='flex justify-between items-center w-full h-full  px-6  2xl:px-16'>
                 {/* <Image src="/../public/assets/1.jpg" alt='/' width="59" height="59" className='rounded-full'  /> */}
                 <h2 className='font-[Courgette] text-[#5651e5]'>AM</h2>

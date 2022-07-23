@@ -3,6 +3,7 @@ import Main from '../components/Main'
 import About from '../components/About'
 import Navbar from '../components/Navbar'
 import Skils from '@components/Skils'
+import Projects from '@components/Projects'
 
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
           <Main />
           <About />
           <Skils/>
+          <Projects/>
 
         </div>
         )
