@@ -3,10 +3,29 @@ import Link from 'next/link'
 import { AiOutlineMenu,AiOutlineClose,AiOutlineMail } from 'react-icons/ai'
 import {FaLinkedin,FaGithub} from 'react-icons/fa'
 import {BsFillPersonLinesFill} from 'react-icons/bs'
+import {useRouter} from 'next/router'
 function Navbar() {
     const [nav, setNav] = useState(false);
     const [shadow , setShadow] = useState(false);
+    const [navBg,setNavBg] =useState('#ecf0f3');
+    const [linkColor,setLinColor] =useState('#1f2937');
 
+    const router = useRouter()
+    
+    useEffect(()=>{
+        if(
+            router.asPath ==='/property' ||
+            router.asPath ==='/crypto' ||
+            router.asPath ==='/netflix' ||
+            router.asPath ==='/twitch' 
+        ){
+            setNavBg('transparent')
+            setLinColor('#ecf0f3')
+        }else{
+            setNavBg('#ecf0f3')
+            setLinColor('#1f2937')   
+        }
+    })
     const handleNav = () => {
         setNav(!nav);
       };
@@ -22,12 +41,16 @@ function Navbar() {
         window.addEventListener('scroll', handleshadow)
     })  
     return (
-        <div className={shadow ? 'fixed w-full h-20 shadow-xl z-[100]' : 'fixed w-full h-20 z-[100]'}>
+        <div 
+        style={{backgroundColor:`${navBg}`}}
+        className={shadow ? 'fixed w-full h-20 shadow-xl z-[100]' : 'fixed w-full h-20 z-[100]'}>
             <div className='flex justify-between items-center w-full h-full  px-6  2xl:px-16'>
                 {/* <Image src="/../public/assets/1.jpg" alt='/' width="59" height="59" className='rounded-full'  /> */}
                 <Link  href='/'><h2 className='font-[Courgette] text-[#5651e5]'>AM</h2></Link>
                 <div>
-                    <ul className='hidden md:flex'>
+                    <ul 
+                    style={{color:`${linkColor}`}}
+                    className='hidden md:flex'>
                         <Link href="/">
                             <li className='ml-10 text-sm uppercase hover:border-b'>
                                 Home
