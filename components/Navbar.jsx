@@ -1,19 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link'
 import { AiOutlineMenu,AiOutlineClose,AiOutlineMail } from 'react-icons/ai'
 import {FaLinkedin,FaGithub} from 'react-icons/fa'
 import {BsFillPersonLinesFill} from 'react-icons/bs'
 function Navbar() {
     const [nav, setNav] = useState(false);
+    const [shadow , setShadow] = useState(false);
 
     const handleNav = () => {
         setNav(!nav);
       };
+
+    useEffect(()=>{
+        const handleshadow = ()=>{
+            if(window.scrollY >= 90){
+                setShadow (true)
+            }else{
+                setShadow(false)
+            }
+        }
+        window.addEventListener('scroll', handleshadow)
+    })  
     return (
-        <div className='w-full h-20 shadow-xl z-[100]'>
+        <div className={shadow ? 'fixed w-full h-20 shadow-xl z-[100]' : 'fixed w-full h-20 z-[100]'}>
             <div className='flex justify-between items-center w-full h-full  px-6  2xl:px-16'>
                 {/* <Image src="/../public/assets/1.jpg" alt='/' width="59" height="59" className='rounded-full'  /> */}
-                <h2 className='font-[Courgette] text-[#5651e5]'>AM</h2>
+                <Link  href='/'><h2 className='font-[Courgette] text-[#5651e5]'>AM</h2></Link>
                 <div>
                     <ul className='hidden md:flex'>
                         <Link href="/">
@@ -21,28 +33,28 @@ function Navbar() {
                                 Home
                             </li>
                         </Link>
-                        <Link href="/">
+                        <Link href="/#about">
                             <li className='ml-10 text-sm uppercase hover:border-b'>
                                 About
                             </li>
                         </Link>
-                        <Link href="/">
+                        <Link href="/#skills">
                             <li className='ml-10 text-sm uppercase hover:border-b'>
                                 Skils
                             </li>
                         </Link>
-                        <Link href="/">
+                        <Link href="/#projects">
                             <li className='ml-10 text-sm uppercase hover:border-b'>
                                 Projects
                             </li>
                         </Link>
-                        <Link href="/">
+                        <Link href="/#contact">
                             <li className='ml-10 text-sm uppercase hover:border-b'>
                                 Contact
                             </li>
                         </Link>
                     </ul>
-                    <div onClick={handleNav} className='md:hidden rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer  hover:scale-105 ease-in duration-300'>
+                    <div onClick={handleNav} className='md:hidden  p-3 cursor-pointer  hover:scale-105 ease-in duration-300'>
                         <AiOutlineMenu  />
                     </div>
                 </div>
@@ -53,7 +65,7 @@ function Navbar() {
                     <div className=''>
                         <div className='flex w-full items-center justify-between'>
                             {/* <Image src='/../public/assets/1.jpg' alt='/' width='55' height='55' className='rounded-full'/> */}
-                            <h2 className='font-[Courgette] text-[#5651e5]'>AM</h2>
+                            <Link href='/'><h2 className='font-[Courgette] text-[#5651e5] cursor-pointer'>AM</h2></Link>
                            <div onClick={handleNav} className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer  hover:scale-105 ease-in duration-300'>
                             
                            <AiOutlineClose />
@@ -68,19 +80,19 @@ function Navbar() {
                     <div className='py-4 flex flex-col'>
                         <ul className='uppercase'>
                             <Link href='/'>
-                                <li className='py-4 text-sm'>Home</li>
+                                <li onClick={()=>setNav(false)} className='py-4 text-sm'>Home</li>
                             </Link>
-                            <Link href='/'>
-                                <li className='py-4 text-sm'>About</li>
+                            <Link href='/#about'>
+                                <li onClick={()=>setNav(false)} className='py-4 text-sm'>About</li>
                             </Link>
-                            <Link href='/'>
-                                <li className='py-4 text-sm'>Skills</li>
+                            <Link href='/#skills'>
+                                <li onClick={()=>setNav(false)} className='py-4 text-sm'>Skills</li>
                             </Link>
-                            <Link href='/'>
-                                <li className='py-4 text-sm'>Projects</li>
+                            <Link href='/#projects'>
+                                <li onClick={()=>setNav(false)} className='py-4 text-sm'>Projects</li>
                             </Link>
-                            <Link href='/'>
-                                <li className='py-4 text-sm'>Contact</li>
+                            <Link href='/#contact'>
+                                <li onClick={()=>setNav(false)} className='py-4 text-sm'>Contact</li>
                             </Link>
                         </ul>
                         <div className='pt-20'>
