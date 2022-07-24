@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { RiRadioButtonFill } from 'react-icons/ri'
+import cryptoImg from '../public/assets/projects/crypto.jpg';
 
 const crypto = () => {
     return (
@@ -9,7 +10,7 @@ const crypto = () => {
             <div className='w-screen h-[30vh] lg:h-[40vh] relative'>
                 <div className='absolute top-0 left-0 w-full h-[30vh] lg:h-[40vh] bg-black/80 z-10'>
                 </div>
-                <Image className='abbsolute z-1' layout='fill' objectFit='cover' src="/../public/assets/projects/crypto.jpg" alt="/" />
+                <Image className='abbsolute z-1' layout='fill' objectFit='cover' src={cryptoImg} alt="/" />
                 <div className='absolute top-[70%] max-w-[1240px] w-full left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] z-10 p-2 text-white'>
                     <h2 className='py-2'>Crypto</h2>
                     <h3>React Js / Tailwind / Firebase</h3>
