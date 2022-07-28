@@ -1,6 +1,3 @@
-const mail = require('@sendgrid/mail');
-mail.setApiKey(process.env.SEND_Key)
-
 import React from 'react'
 import Link from 'next/link'
 import { AiOutlineMail } from 'react-icons/ai'
@@ -10,36 +7,19 @@ import { HiOutlineChevronDoubleUp } from 'react-icons/hi'
 
 
 const Contact = () => {
-    async function handleOnSubmit(e){
+    async function handleOnSubmit(e) {
         e.preventDefault();
-        const formData={};
-        Array.from(e.currentTarget.elements).forEach(field =>{
-            if(!field.name) return;
+        const formData = {};
+        Array.from(e.currentTarget.elements).forEach(field => {
+            if (!field.name) return;
             formData[field.name] = field.value;
         })
-        const message=`
-        Name : amine \r\n
-        Email: aaa@gmail.com
-        `
-        const msg = {
-            to: 'aminemino12030@gmail.com', // Change to your recipient
-            from: 'aminemino12020@gmail.com', // Change to your verified sender
-            subject: 'testt bla api',
-            text: message,
-            html: message.replace(/\r\n/g,'<br/>'),
-          }
-    
-          mail.send(msg).then(() => {
-        console.log('Email sent')
-      })
-      .catch((error) => {
-        console.error(error)
-      })
-    
-        // fetch('/api/mail',{
-        //     method : 'post',
-        //     body: JSON.stringify(formData)
-        // })
+       
+
+        fetch('/api/mail',{
+            method : 'post',
+            body: JSON.stringify(formData)
+        })
         console.log(formData)
     }
     return (
@@ -87,7 +67,7 @@ const Contact = () => {
                                 <div className='grid md:grid-cols-2 gap-4 w-full py-2'>
                                     <div className='flex flex-col'>
                                         <label className='uppercase text-sm py-2'>Name</label>
-                                        <input type="text" name="name"  className='border-2 rounded-lg p-3 flex border-gray-300 ' />
+                                        <input type="text" name="name" className='border-2 rounded-lg p-3 flex border-gray-300 ' />
                                     </div>
                                     <div className='flex flex-col'>
                                         <label className='uppercase text-sm py-2'>Phone Number</label>
@@ -121,7 +101,7 @@ const Contact = () => {
                 <div className='flex justify-center py-12 '>
                     <Link href='/'>
                         <div className='rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300'>
-                            <HiOutlineChevronDoubleUp size={30} className='text-[#5651e5] '/>
+                            <HiOutlineChevronDoubleUp size={30} className='text-[#5651e5] ' />
                         </div>
                     </Link>
                 </div>
