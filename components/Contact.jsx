@@ -1,3 +1,5 @@
+const mail = require('@sendgrid/mail');
+mail.setApiKey(process.env.SEND_Key)
 
 import React from 'react'
 import Link from 'next/link'
