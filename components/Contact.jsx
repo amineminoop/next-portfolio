@@ -1,9 +1,11 @@
+
 import React from 'react'
 import Link from 'next/link'
 import { AiOutlineMail } from 'react-icons/ai'
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
 import { HiOutlineChevronDoubleUp } from 'react-icons/hi'
+
 
 const Contact = () => {
     async function handleOnSubmit(e){
@@ -13,10 +15,29 @@ const Contact = () => {
             if(!field.name) return;
             formData[field.name] = field.value;
         })
-        fetch('/api/mail',{
-            method : 'post',
-            body: JSON.stringify(formData)
-        })
+        const message=`
+        Name : amine \r\n
+        Email: aaa@gmail.com
+        `
+        const msg = {
+            to: 'aminemino12030@gmail.com', // Change to your recipient
+            from: 'aminemino12020@gmail.com', // Change to your verified sender
+            subject: 'testt bla api',
+            text: message,
+            html: message.replace(/\r\n/g,'<br/>'),
+          }
+    
+          mail.send(msg).then(() => {
+        console.log('Email sent')
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+    
+        // fetch('/api/mail',{
+        //     method : 'post',
+        //     body: JSON.stringify(formData)
+        // })
         console.log(formData)
     }
     return (
