@@ -16,7 +16,7 @@ const Contact = () => {
         })
        
 
-        fetch('/api/mail',{
+        fetch('https://amine-menhane.netlify.app/api/mail',{
             method : 'post',
             body: JSON.stringify(formData)
         })
