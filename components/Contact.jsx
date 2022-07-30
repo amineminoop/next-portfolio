@@ -4,12 +4,17 @@ import { AiOutlineMail } from 'react-icons/ai'
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
 import { HiOutlineChevronDoubleUp } from 'react-icons/hi'
+import { useForm, ValidationError } from '@formspree/react';
 
 
 const Contact = () => {
     async function handleOnSubmit(e) {
  
     }
+    const [state, handleSubmit] = useForm("xwkzevze");
+  if (state.succeeded) {
+      return <p>Thanks for joining!</p>;
+  }
     return (
         <div id='contact' className='w-full lg:h-screen p-2'>
             <div className='maw-w-[1240px] m-auto px-2 py-16 w-full'>
@@ -51,7 +56,7 @@ const Contact = () => {
                     </div>
                     <div className='col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4'>
                         <div className='p-4'>
-                            <form action="https://formspree.io/f/xwkzevze"  method="POST">
+                            <form  onSubmit={handleSubmit}>
                                 <div className='grid md:grid-cols-2 gap-4 w-full py-2'>
                                     <div className='flex flex-col'>
                                         <label className='uppercase text-sm py-2'>Name</label>
@@ -60,13 +65,14 @@ const Contact = () => {
                                     <div className='flex flex-col'>
                                         <label className='uppercase text-sm py-2'>Phone Number</label>
                                         <input type="text" name="phone" id="" className='border-2 rounded-lg p-3 flex border-gray-300 ' required/>
+                                        <ValidationError  prefix="Phone"  field="phone" errors={state.errors}/>
                                     </div>
 
                                 </div>
                                 <div className='flex flex-col py-2'>
                                     <label className='uppercase text-sm py-2'>Email</label>
                                     <input type="email" name="email" id="" className='border-2 rounded-lg p-3 flex border-gray-300 ' required />
-
+                                    <ValidationError  prefix="Email"  field="email" errors={state.errors}/>
                                 </div>
                                 <div className='flex flex-col py-2'>
                                     <label className='uppercase text-sm py-2'>Subject</label>
@@ -78,7 +84,7 @@ const Contact = () => {
                                     <textarea className='border-2 rounded-lg p-3 border-gray-300' name='message' rows={10} required></textarea>
                                 </div>
 
-                                <button className='w-full p-4 text-gray-100 mt-4' type="submit">Send Message</button>
+                                <button className='w-full p-4 text-gray-100 mt-4' disabled={state.submitting}>Send Message</button>
 
                             </form>
 
