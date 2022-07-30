@@ -8,19 +8,7 @@ import { HiOutlineChevronDoubleUp } from 'react-icons/hi'
 
 const Contact = () => {
     async function handleOnSubmit(e) {
-        e.preventDefault();
-        const formData = {};
-        Array.from(e.currentTarget.elements).forEach(field => {
-            if (!field.name) return;
-            formData[field.name] = field.value;
-        })
-       
-
-        fetch('https://amine-portfolio.vercel.app/api/mail',{
-            method : 'post',
-            body: JSON.stringify(formData)
-        })
-        console.log(formData)
+ 
     }
     return (
         <div id='contact' className='w-full lg:h-screen p-2'>
@@ -63,34 +51,34 @@ const Contact = () => {
                     </div>
                     <div className='col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4'>
                         <div className='p-4'>
-                            <form method='post' onSubmit={handleOnSubmit} data-netlify="true">
+                            <form action="https://formspree.io/f/xwkzevze"  method="POST">
                                 <div className='grid md:grid-cols-2 gap-4 w-full py-2'>
                                     <div className='flex flex-col'>
                                         <label className='uppercase text-sm py-2'>Name</label>
-                                        <input type="text" name="name" className='border-2 rounded-lg p-3 flex border-gray-300 ' />
+                                        <input type="text" name="name" className='border-2 rounded-lg p-3 flex border-gray-300 ' required/>
                                     </div>
                                     <div className='flex flex-col'>
                                         <label className='uppercase text-sm py-2'>Phone Number</label>
-                                        <input type="text" name="phone" id="" className='border-2 rounded-lg p-3 flex border-gray-300 ' />
+                                        <input type="text" name="phone" id="" className='border-2 rounded-lg p-3 flex border-gray-300 ' required/>
                                     </div>
 
                                 </div>
                                 <div className='flex flex-col py-2'>
                                     <label className='uppercase text-sm py-2'>Email</label>
-                                    <input type="email" name="email" id="" className='border-2 rounded-lg p-3 flex border-gray-300 ' />
+                                    <input type="email" name="email" id="" className='border-2 rounded-lg p-3 flex border-gray-300 ' required />
 
                                 </div>
                                 <div className='flex flex-col py-2'>
                                     <label className='uppercase text-sm py-2'>Subject</label>
-                                    <input type="text" name="subject" id="" className='border-2 rounded-lg p-3 flex border-gray-300 ' />
+                                    <input type="text" name="subject" id="" className='border-2 rounded-lg p-3 flex border-gray-300 ' required/>
 
                                 </div>
                                 <div className='flex flex-col py-2'>
                                     <label className='uppercase text-sm py-2'>Message</label>
-                                    <textarea className='border-2 rounded-lg p-3 border-gray-300' name='message' rows={10}></textarea>
+                                    <textarea className='border-2 rounded-lg p-3 border-gray-300' name='message' rows={10} required></textarea>
                                 </div>
 
-                                <button className='w-full p-4 text-gray-100 mt-4'>Send Message</button>
+                                <button className='w-full p-4 text-gray-100 mt-4' type="submit">Send Message</button>
 
                             </form>
 
