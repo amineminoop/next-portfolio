@@ -7,13 +7,17 @@ import { HiOutlineChevronDoubleUp } from 'react-icons/hi'
 import { useForm, ValidationError } from '@formspree/react';
 
 
+
 const Contact = () => {
-    async function handleOnSubmit(e) {
- 
-    }
+
     const [state, handleSubmit] = useForm("xwkzevze");
   if (state.succeeded) {
-      return <p>Thanks for joining!</p>;
+      return <div>
+        
+        <div class="bg-green-100 rounded-lg py-5 px-6 mb-4 text-base text-green-700 mb-3" role='alert'>
+      your message envoi succefully
+    </div>
+      </div>
   }
     return (
         <div id='contact' className='w-full lg:h-screen p-2'>
