@@ -1,22 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
+import { FiRefreshCcw } from "react-icons/fi";
 import { useForm, ValidationError } from "@formspree/react";
+
+import { useRouter } from "next/router";
 
 const Contact = () => {
   const [state, handleSubmit] = useForm("xwkzevze");
+  const router = useRouter();
+
   if (state.succeeded) {
     return (
-      <div>
-        <div
-          class="bg-green-100 rounded-lg py-5 px-6 mb-4 text-base text-green-700 mb-3"
-          role="alert"
+      <div
+        className="bg-green-600 py-2 flex items-center justify-center mb-4 text-base text-white sm:py-5"
+        role="alert"
+      >
+        your message sended succefully!{" "}
+        <button
+          className="w-22 sm:w-48 p-3 ml-5 text-gray-100 shadow-xl shadow-green-400"
+          onClick={() => {
+            router.push("/");
+            router.reload();
+           
+          }}
         >
-          your message envoi 
-        </div>
+          {" "}
+          Refresh{" "}
+        </button>
       </div>
     );
   }
